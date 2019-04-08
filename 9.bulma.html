@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+</head>
+<body>
+    <div id="root" class="container">
+        <modal  v-show="showModal" @close="showModal = false">
+            <p>Something goes here</p>
+        </modal>
+        <message title="Hello World" body="Lorem ipsum dolor sit amet"></message>
+        <message title="Vue with Bulma" body="Lorem ipsum dolor sit amet"></message>
+
+        <button type="button" @click="showModal = true">Show modal</button>
+        <hr>
+        <tabs>
+            <tab name="About Us" :selected="true">
+                <h1>Here is the content for the about us tab</h1>
+            </tab>
+            <tab name="About Our Culture">
+                <h1>Here is the content for the about our culture tab</h1>
+            </tab>
+            <tab name="About Our Vision">
+                <h1>Here is the content for the about our vision tab</h1>
+            </tab>
+        </tabs>
+        <hr>
+        <coupon @applied="onCouponApplied"></coupon>
+        <h4 v-if="couponApplied">Your coupon: {{ couponCode }} was applied!</h4>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+    <script src="9.main.js"></script>
+</body>
+</html>

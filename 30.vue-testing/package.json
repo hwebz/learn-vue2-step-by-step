@@ -1,0 +1,31 @@
+{
+  "name": "vue-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/ava"
+  },
+  "author": "",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register",
+      "./test/helpers/setup-browser-env.js"
+    ]
+  },
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "browser-env": "^3.2.6"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
