@@ -1,6 +1,15 @@
 <template>
     <div class="columns">
         <div class="column">
+            <example :items="['one', 'two', 'three']">
+                <!-- <template slot-scope="props">
+                    <h5 v-text="props.item + ', ' + props.thing + ', ' + props.bar"></h5>
+                </template> -->
+                <template slot="menu-item" slot-scope="{item, thing, bar}">
+                    <h5 v-text="item + ', ' + thing + ', ' + bar"></h5>
+                </template>
+            </example>
+            <hr>
             <div class="message" v-for="(status, index) in statuses" :key="index">
                 <div class="message-header">
                     <p>{{status.user.name}} said...</p>
@@ -26,8 +35,10 @@
     import Status from '../models/Status';
     import AddToStream from '../components/AddToStream.vue';
 
+    import Example from './Example.vue';
+
     export default {
-        components: { AddToStream },
+        components: { AddToStream, Example },
         data() {
             return {
                 statuses: []

@@ -16,7 +16,7 @@ let routes = [
     {
         path: '/contact',
         component: Contact
-    }
+    },
 ]
 
 export default new VueRouter({
